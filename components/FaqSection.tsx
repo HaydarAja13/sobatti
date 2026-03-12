@@ -54,7 +54,7 @@ export default function FaqSection() {
 
       {/* Dot pattern background */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.35]"
+        className="pointer-events-none absolute inset-0 opacity-[35]"
         style={{
           backgroundImage: `radial-gradient(circle, rgba(99,102,241,0.15) 1px, transparent 1px)`,
           backgroundSize: "28px 28px",
@@ -63,7 +63,7 @@ export default function FaqSection() {
 
       {/* Subtle diagonal line pattern */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.02]"
+        className="pointer-events-none absolute inset-0 opacity-[2]"
         style={{
           backgroundImage: `repeating-linear-gradient(
             -45deg,
@@ -106,7 +106,7 @@ export default function FaqSection() {
             className="mb-5 text-4xl font-extrabold tracking-tight text-white sm:text-5xl"
           >
             Frequently Asked{" "}
-            <span className="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
               Questions
             </span>
           </motion.h2>
@@ -135,7 +135,7 @@ export default function FaqSection() {
               <AccordionItem
                 key={i}
                 value={`item-${i}`}
-                className="rounded-xl border border-white/[0.06] bg-white/[0.02] px-6 backdrop-blur-sm transition-colors duration-200 data-[state=open]:border-indigo-500/15 data-[state=open]:bg-indigo-500/[0.03]"
+                className="rounded-xl border border-white/6 bg-white/[2] px-6 backdrop-blur-sm transition-colors duration-200 data-[state=open]:border-indigo-500/15 data-[state=open]:bg-indigo-500/[3]"
               >
                 <AccordionTrigger className="py-5 text-left text-base font-semibold text-white hover:no-underline [&[data-state=open]>svg]:text-indigo-400">
                   {faq.question}

@@ -86,7 +86,7 @@ export default function TeamsSection() {
             className="mb-5 text-4xl font-extrabold tracking-tight text-white sm:text-5xl"
           >
             Meet the{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
               Builders
             </span>
           </motion.h2>
@@ -98,12 +98,12 @@ export default function TeamsSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg leading-relaxed text-blue-200/50"
           >
-            A world-class team of engineers, designers, and strategists united by
-            a shared vision of a decentralized future.
+            A world-class team of engineers, designers, and strategists united
+            by a shared vision of a decentralized future.
           </motion.p>
         </div>
 
-        <Separator className="mx-auto my-16 max-w-xs bg-white/[0.06]" />
+        <Separator className="mx-auto my-16 max-w-xs bg-white/[6]" />
 
         {/* Team grid — top row 3, bottom row 2 centered */}
         <div className="flex flex-col items-center gap-5">
@@ -138,7 +138,7 @@ function TeamCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm transition-all duration-300 hover:border-blue-500/15 hover:bg-blue-500/[0.03]"
+      className="group relative overflow-hidden rounded-2xl border border-white/6 bg-white/[2] backdrop-blur-sm transition-all duration-300 hover:border-blue-500/15 hover:bg-blue-500/[3]"
     >
       {/* Photo */}
       <div className="relative aspect-[4/3] w-full overflow-hidden">
@@ -184,7 +184,7 @@ function TeamCard({
       {/* Info */}
       <div className="p-6 pt-3">
         <h3 className="text-lg font-bold text-white">{member.name}</h3>
-        <p className="mt-1 text-sm font-medium bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+        <p className="mt-1 text-sm font-medium bg-linear-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
           {member.role}
         </p>
         <p className="mt-3 text-sm leading-relaxed text-blue-200/40">

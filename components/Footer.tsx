@@ -1,7 +1,14 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Rocket, Github, Twitter, Linkedin, Youtube, ArrowRight } from "lucide-react";
+import {
+  Rocket,
+  Github,
+  Twitter,
+  Linkedin,
+  Youtube,
+  ArrowRight,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
@@ -46,7 +53,7 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-[#020205] px-6 pt-20 pb-8">
       {/* Top gradient border effect */}
-      <div className="pointer-events-none absolute top-0 right-0 left-0 h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent" />
+      <div className="pointer-events-none absolute top-0 right-0 left-0 h-px bg-linear-to-r from-transparent via-indigo-500/30 to-transparent" />
 
       {/* Ambient glow */}
       <div className="pointer-events-none absolute inset-0">
@@ -84,7 +91,7 @@ export default function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.02] text-zinc-500 transition-all duration-200 hover:border-indigo-500/20 hover:bg-indigo-500/10 hover:text-white"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/6 bg-white/[2] text-zinc-500 transition-all duration-200 hover:border-indigo-500/20 hover:bg-indigo-500/10 hover:text-white"
                 >
                   <social.icon size={15} />
                 </a>
@@ -107,18 +114,15 @@ export default function Footer() {
               Get the latest updates, news and product announcements delivered
               straight to your inbox.
             </p>
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="flex gap-2"
-            >
+            <form onSubmit={(e) => e.preventDefault()} className="flex gap-2">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="h-10 w-full rounded-lg border border-white/[0.06] bg-white/[0.03] px-4 text-sm text-white placeholder-zinc-600 outline-none transition-colors focus:border-indigo-500/30"
+                className="h-10 w-full rounded-lg border border-white/6 bg-white/[3] px-4 text-sm text-white placeholder-zinc-600 outline-none transition-colors focus:border-indigo-500/30"
               />
               <Button
                 type="submit"
-                className="h-10 flex-shrink-0 border-0 bg-gradient-to-r from-indigo-600 to-violet-600 px-4 font-semibold text-white shadow-md shadow-indigo-600/20 hover:brightness-110"
+                className="h-10 flex-shrink-0 border-0 bg-linear-to-r from-indigo-600 to-violet-600 px-4 font-semibold text-white shadow-md shadow-indigo-600/20 hover:brightness-110"
               >
                 <ArrowRight size={16} />
               </Button>
@@ -126,7 +130,7 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        <Separator className="mb-10 bg-white/[0.04]" />
+        <Separator className="mb-10 bg-white/[4]" />
 
         {/* Link columns */}
         <motion.div
@@ -157,7 +161,7 @@ export default function Footer() {
           ))}
         </motion.div>
 
-        <Separator className="mb-6 bg-white/[0.04]" />
+        <Separator className="mb-6 bg-white/[4]" />
 
         {/* Bottom bar */}
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">

@@ -61,7 +61,7 @@ export default function ContactSection() {
 
       {/* Dot pattern */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.2]"
+        className="pointer-events-none absolute inset-0 opacity-/20"
         style={{
           backgroundImage:
             "radial-gradient(circle, rgba(99,102,241,0.12) 1px, transparent 1px)",
@@ -95,7 +95,7 @@ export default function ContactSection() {
             className="mb-5 text-4xl font-extrabold tracking-tight text-white sm:text-5xl"
           >
             Let&apos;s Build{" "}
-            <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-indigo-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent">
               Something Great
             </span>
           </motion.h2>
@@ -149,7 +149,7 @@ export default function ContactSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.1 + i * 0.1 }}
-                className="group flex items-center gap-5 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5 backdrop-blur-sm transition-all duration-300 hover:border-indigo-500/20 hover:bg-indigo-500/[0.04]"
+                className="group flex items-center gap-5 rounded-2xl border border-white/6 bg-white/[2] p-5 backdrop-blur-sm transition-all duration-300 hover:border-indigo-500/20 hover:bg-indigo-500/[4]"
               >
                 <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600/20 to-violet-600/20 ring-1 ring-indigo-500/10 transition-all duration-300 group-hover:from-indigo-600/30 group-hover:to-violet-600/30">
                   <item.icon size={20} className="text-indigo-400" />
@@ -170,7 +170,7 @@ export default function ContactSection() {
             ))}
 
             {/* Social proof strip */}
-            <div className="mt-2 rounded-2xl border border-white/[0.06] bg-gradient-to-br from-indigo-600/[0.06] to-violet-600/[0.06] p-5 backdrop-blur-sm">
+            <div className="mt-2 rounded-2xl border border-white/6 bg-gradient-to-br from-indigo-600/[6] to-violet-600/[6] p-5 backdrop-blur-sm">
               <p className="mb-1 text-sm font-semibold text-white">
                 Join 180K+ builders
               </p>
@@ -193,8 +193,8 @@ export default function ContactSection() {
               onSubmit={(e) => e.preventDefault()}
               className={`rounded-2xl border p-8 backdrop-blur-sm transition-all duration-500 ${
                 formFocused
-                  ? "border-indigo-500/20 bg-indigo-500/[0.03] shadow-xl shadow-indigo-600/5"
-                  : "border-white/[0.06] bg-white/[0.02]"
+                  ? "border-indigo-500/20 bg-indigo-500/[3] shadow-xl shadow-indigo-600/5"
+                  : "border-white/6 bg-white/[2]"
               }`}
             >
               <div className="grid gap-5 sm:grid-cols-2">
@@ -207,7 +207,7 @@ export default function ContactSection() {
                     placeholder="John"
                     onFocus={() => setFormFocused(true)}
                     onBlur={() => setFormFocused(false)}
-                    className="h-11 w-full rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 text-sm text-white placeholder-zinc-600 outline-none transition-colors focus:border-indigo-500/30 focus:bg-indigo-500/[0.03]"
+                    className="h-11 w-full rounded-xl border border-white/6 bg-white/[3] px-4 text-sm text-white placeholder-zinc-600 outline-none transition-colors focus:border-indigo-500/30 focus:bg-indigo-500/[3]"
                   />
                 </div>
                 <div>
@@ -219,7 +219,7 @@ export default function ContactSection() {
                     placeholder="Doe"
                     onFocus={() => setFormFocused(true)}
                     onBlur={() => setFormFocused(false)}
-                    className="h-11 w-full rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 text-sm text-white placeholder-zinc-600 outline-none transition-colors focus:border-indigo-500/30 focus:bg-indigo-500/[0.03]"
+                    className="h-11 w-full rounded-xl border border-white/6 bg-white/[3] px-4 text-sm text-white placeholder-zinc-600 outline-none transition-colors focus:border-indigo-500/30 focus:bg-indigo-500/[3]"
                   />
                 </div>
               </div>
@@ -233,7 +233,7 @@ export default function ContactSection() {
                   placeholder="john@example.com"
                   onFocus={() => setFormFocused(true)}
                   onBlur={() => setFormFocused(false)}
-                  className="h-11 w-full rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 text-sm text-white placeholder-zinc-600 outline-none transition-colors focus:border-indigo-500/30 focus:bg-indigo-500/[0.03]"
+                  className="h-11 w-full rounded-xl border border-white/6 bg-white/[3] px-4 text-sm text-white placeholder-zinc-600 outline-none transition-colors focus:border-indigo-500/30 focus:bg-indigo-500/[3]"
                 />
               </div>
 
@@ -246,7 +246,7 @@ export default function ContactSection() {
                   placeholder="How can we help?"
                   onFocus={() => setFormFocused(true)}
                   onBlur={() => setFormFocused(false)}
-                  className="h-11 w-full rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 text-sm text-white placeholder-zinc-600 outline-none transition-colors focus:border-indigo-500/30 focus:bg-indigo-500/[0.03]"
+                  className="h-11 w-full rounded-xl border border-white/6 bg-white/[3] px-4 text-sm text-white placeholder-zinc-600 outline-none transition-colors focus:border-indigo-500/30 focus:bg-indigo-500/[3]"
                 />
               </div>
 
@@ -259,13 +259,13 @@ export default function ContactSection() {
                   placeholder="Tell us about your project…"
                   onFocus={() => setFormFocused(true)}
                   onBlur={() => setFormFocused(false)}
-                  className="w-full resize-none rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3 text-sm text-white placeholder-zinc-600 outline-none transition-colors focus:border-indigo-500/30 focus:bg-indigo-500/[0.03]"
+                  className="w-full resize-none rounded-xl border border-white/6 bg-white/[3] px-4 py-3 text-sm text-white placeholder-zinc-600 outline-none transition-colors focus:border-indigo-500/30 focus:bg-indigo-500/[3]"
                 />
               </div>
 
               <Button
                 type="submit"
-                className="mt-6 h-12 w-full border-0 bg-gradient-to-r from-indigo-600 to-violet-600 text-base font-semibold text-white shadow-lg shadow-indigo-600/25 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-600/35 hover:brightness-110"
+                className="mt-6 h-12 w-full border-0 bg-linear-to-r from-indigo-600 to-violet-600 text-base font-semibold text-white shadow-lg shadow-indigo-600/25 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-600/35 hover:brightness-110"
               >
                 <Send size={16} className="mr-2" />
                 Send Message

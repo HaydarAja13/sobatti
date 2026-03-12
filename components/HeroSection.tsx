@@ -7,17 +7,22 @@ import {
   useTransform,
   useMotionValueEvent,
 } from "motion/react";
-import { ArrowRight, Sparkles, Shield, Zap, Globe } from "lucide-react";
+import {
+  ArrowRight,
+  Sparkles,
+  BanknoteArrowDown,
+  Handshake,
+  GraduationCap,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 
 const TOTAL_FRAMES = 240;
 
 function getFrameSrc(index: number): string {
   const num = String(Math.min(Math.max(index, 1), TOTAL_FRAMES)).padStart(
     3,
-    "0"
+    "0",
   );
   return `/frames/ezgif-frame-${num}.jpg`;
 }
@@ -34,11 +39,7 @@ export default function HeroSection() {
     offset: ["start start", "end end"],
   });
 
-  const currentFrame = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [1, TOTAL_FRAMES]
-  );
+  const currentFrame = useTransform(scrollYProgress, [0, 1], [1, TOTAL_FRAMES]);
 
   // Content fades out as user scrolls
   const contentOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
@@ -88,7 +89,7 @@ export default function HeroSection() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(img, 0, 0);
     },
-    [imagesLoaded]
+    [imagesLoaded],
   );
 
   useMotionValueEvent(currentFrame, "change", (latest) => {
@@ -111,15 +112,13 @@ export default function HeroSection() {
         {/* Loading state */}
         {!imagesLoaded && (
           <div className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-4 bg-[#050816]">
-            <div className="h-1 w-48 overflow-hidden rounded-full bg-white/[0.06]">
+            <div className="h-1 w-48 overflow-hidden rounded-full bg-white/6">
               <motion.div
-                className="h-full rounded-full bg-gradient-to-r from-blue-600 to-indigo-600"
+                className="h-full rounded-full bg-linear-to-r from-blue-600 to-indigo-600"
                 style={{ width: `${loadProgress}%` }}
               />
             </div>
-            <p className="text-sm text-blue-200/40">
-              Loading… {loadProgress}%
-            </p>
+            <p className="text-sm text-blue-200/40">Loading… {loadProgress}%</p>
           </div>
         )}
 
@@ -134,8 +133,8 @@ export default function HeroSection() {
 
         {/* Background ambient glows */}
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/2 top-1/3 h-[900px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/8 blur-[140px]" />
-          <div className="absolute left-1/4 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/6 blur-[100px]" />
+          <div className="absolute left-1/2 top-1/3 h-225 w-225 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/8 blur-[140px]" />
+          <div className="absolute left-1/4 top-1/2 h-125 w-125 -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/6 blur-[100px]" />
         </div>
 
         {/* ── Hero Content (fades on scroll) ── */}
@@ -152,10 +151,10 @@ export default function HeroSection() {
           >
             <Badge
               variant="outline"
-              className="gap-2 border-blue-500/20 bg-blue-500/10 px-4 py-1.5 text-sm font-medium text-blue-300 backdrop-blur-sm hover:bg-blue-500/15"
+              className="gap-2 border-blue-500/20 bg-blue-500/10 px-4 py-4 text-md font-medium text-blue-300 backdrop-blur-sm hover:bg-blue-500/15"
             >
-              <Sparkles size={14} className="text-blue-400" />
-              Welcome to the Future of Web3
+              <Sparkles size={20} className="text-blue-400" />
+              Welcome to the future of learning
             </Badge>
           </motion.div>
 
@@ -166,12 +165,15 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="mb-6 text-5xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-6xl lg:text-7xl"
           >
-            Build the{" "}
-            <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
-              Decentralized
+            Help{" "}
+            <span className="bg-linear-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+              Learning
             </span>
             <br />
-            Future Today
+            To be better in
+            <span className="bg-linear-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+              Technology
+            </span>
           </motion.h1>
 
           {/* Sub-heading */}
@@ -181,9 +183,9 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-blue-200/60 sm:text-xl"
           >
-            Empowering creators, developers, and communities with
-            next-generation blockchain infrastructure. Seamless. Scalable.
-            Secure.
+            Helping skill development in Information Technology. We provide
+            specialized service and mentorship for students and university
+            students
           </motion.p>
 
           {/* CTA Buttons */}
@@ -196,10 +198,10 @@ export default function HeroSection() {
             <Button
               asChild
               size="lg"
-              className="h-12 border-0 bg-gradient-to-r from-blue-600 to-indigo-600 px-8 text-base font-semibold text-white shadow-xl shadow-blue-600/25 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-600/35 hover:brightness-110"
+              className="h-12 border-0 bg-linear-to-r from-blue-600 to-indigo-600 px-8 text-base font-semibold text-white shadow-xl shadow-blue-600/25 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-600/35 hover:brightness-110"
             >
               <a href="#contact" className="gap-2">
-                Launch App
+                Get Started
                 <ArrowRight
                   size={18}
                   className="transition-transform group-hover/button:translate-x-1"
@@ -210,7 +212,7 @@ export default function HeroSection() {
               asChild
               variant="outline"
               size="lg"
-              className="h-12 border-white/[0.08] bg-white/[0.03] px-8 text-base font-semibold text-blue-200/70 backdrop-blur-sm hover:border-white/[0.15] hover:bg-white/[0.06] hover:text-white"
+              className="h-12 bg-black/3 px-8 text-base font-semibold text-blue-200/70 backdrop-blur-sm hover:border-white/15 hover:bg-white/6 hover:text-white"
             >
               <a href="#about">Learn More</a>
             </Button>
@@ -224,15 +226,15 @@ export default function HeroSection() {
             className="mt-12 flex flex-wrap items-center justify-center gap-3"
           >
             {[
-              { icon: Shield, label: "Enterprise Security" },
-              { icon: Zap, label: "Lightning Fast" },
-              { icon: Globe, label: "Global Network" },
+              { icon: BanknoteArrowDown, label: "Affordable" },
+              { icon: Handshake, label: "Friendly" },
+              { icon: GraduationCap, label: "Skilled" },
             ].map((item) => (
               <div
                 key={item.label}
-                className="flex items-center gap-2 rounded-full border border-white/[0.06] bg-black/30 px-4 py-2 text-sm text-blue-200/50 backdrop-blur-sm"
+                className="flex items-center gap-2 rounded-full border border-white/6 bg-black/30 px-4 py-2 text-md text-blue-200/50 backdrop-blur-sm"
               >
-                <item.icon size={14} className="text-blue-400/70" />
+                <item.icon size={22} className="text-blue-400/70" />
                 {item.label}
               </div>
             ))}
@@ -241,17 +243,17 @@ export default function HeroSection() {
 
         {/* Scroll progress bar at bottom */}
         <div className="absolute bottom-6 left-1/2 z-10 w-48 -translate-x-1/2">
-          <div className="h-0.5 w-full overflow-hidden rounded-full bg-white/[0.08]">
+          <div className="h-0.5 w-full overflow-hidden rounded-full bg-white/8">
             <motion.div
-              className="h-full rounded-full bg-gradient-to-r from-blue-500 to-indigo-500"
+              className="h-full rounded-full bg-linear-to-r from-blue-500 to-indigo-500"
               style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
             />
           </div>
         </div>
 
         {/* Edge gradients */}
-        <div className="pointer-events-none absolute top-0 right-0 left-0 h-24 bg-gradient-to-b from-[#050816] to-transparent" />
-        <div className="pointer-events-none absolute right-0 bottom-0 left-0 h-32 bg-gradient-to-t from-[#050816] to-transparent" />
+        <div className="pointer-events-none absolute top-0 right-0 left-0 h-24 bg-linear-to-b from-[#050816] to-transparent" />
+        <div className="pointer-events-none absolute right-0 bottom-0 left-0 h-32 bg-linear-to-t from-[#050816] to-transparent" />
       </div>
     </section>
   );

@@ -1,13 +1,21 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
-import { motion, useScroll, useTransform, useMotionValueEvent } from "motion/react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionValueEvent,
+} from "motion/react";
 import { Badge } from "@/components/ui/badge";
 
 const TOTAL_FRAMES = 240;
 
 function getFrameSrc(index: number): string {
-  const num = String(Math.min(Math.max(index, 1), TOTAL_FRAMES)).padStart(3, "0");
+  const num = String(Math.min(Math.max(index, 1), TOTAL_FRAMES)).padStart(
+    3,
+    "0",
+  );
   return `/frames/ezgif-frame-${num}.jpg`;
 }
 
@@ -59,7 +67,10 @@ export default function ScrollVideo() {
       if (!img) return;
 
       // Set canvas to image natural size on first draw
-      if (canvas.width !== img.naturalWidth || canvas.height !== img.naturalHeight) {
+      if (
+        canvas.width !== img.naturalWidth ||
+        canvas.height !== img.naturalHeight
+      ) {
         canvas.width = img.naturalWidth;
         canvas.height = img.naturalHeight;
       }
@@ -67,7 +78,7 @@ export default function ScrollVideo() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(img, 0, 0);
     },
-    [imagesLoaded]
+    [imagesLoaded],
   );
 
   // Listen to scroll-driven frame changes
@@ -93,9 +104,9 @@ export default function ScrollVideo() {
         {/* Loading state */}
         {!imagesLoaded && (
           <div className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-4 bg-[#050816]">
-            <div className="h-1 w-48 overflow-hidden rounded-full bg-white/[0.06]">
+            <div className="h-1 w-48 overflow-hidden rounded-full bg-white/[6]">
               <motion.div
-                className="h-full rounded-full bg-gradient-to-r from-blue-600 to-indigo-600"
+                className="h-full rounded-full bg-linear-to-r from-blue-600 to-indigo-600"
                 style={{ width: `${loadProgress}%` }}
                 transition={{ duration: 0.1 }}
               />
@@ -135,9 +146,9 @@ export default function ScrollVideo() {
 
         {/* Progress bar at bottom */}
         <div className="absolute bottom-8 left-1/2 z-10 w-48 -translate-x-1/2">
-          <div className="h-0.5 w-full overflow-hidden rounded-full bg-white/[0.08]">
+          <div className="h-0.5 w-full overflow-hidden rounded-full bg-white/[8]">
             <motion.div
-              className="h-full rounded-full bg-gradient-to-r from-blue-500 to-indigo-500"
+              className="h-full rounded-full bg-linear-to-r from-blue-500 to-indigo-500"
               style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
             />
           </div>

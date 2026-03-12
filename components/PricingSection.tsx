@@ -96,7 +96,7 @@ export default function PricingSection() {
             className="mb-5 text-4xl font-extrabold tracking-tight text-white sm:text-5xl"
           >
             Simple,{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
               Transparent
             </span>{" "}
             Pricing
@@ -114,7 +114,7 @@ export default function PricingSection() {
           </motion.p>
         </div>
 
-        <Separator className="mx-auto my-16 max-w-xs bg-white/[0.06]" />
+        <Separator className="mx-auto my-16 max-w-xs bg-white/[6]" />
 
         {/* Pricing cards */}
         <div className="grid gap-5 lg:grid-cols-3">
@@ -127,14 +127,14 @@ export default function PricingSection() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className={`group relative flex flex-col rounded-2xl border p-8 backdrop-blur-sm transition-all duration-300 ${
                 plan.featured
-                  ? "border-blue-500/25 bg-blue-500/[0.06] shadow-xl shadow-blue-600/10 lg:scale-105"
-                  : "border-white/[0.06] bg-white/[0.02] hover:border-blue-500/15 hover:bg-blue-500/[0.03]"
+                  ? "border-blue-500/25 bg-blue-500/[6] shadow-xl shadow-blue-600/10 lg:scale-105"
+                  : "border-white/6 bg-white/[2] hover:border-blue-500/15 hover:bg-blue-500/[3]"
               }`}
             >
               {/* Popular badge */}
               {plan.featured && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <Badge className="gap-1.5 border-0 bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-1 text-xs font-semibold text-white shadow-lg shadow-blue-600/25">
+                  <Badge className="gap-1.5 border-0 bg-linear-to-r from-blue-600 to-indigo-600 px-4 py-1 text-xs font-semibold text-white shadow-lg shadow-blue-600/25">
                     <Sparkles size={12} />
                     Most Popular
                   </Badge>
@@ -164,8 +164,8 @@ export default function PricingSection() {
                 asChild
                 className={`mb-8 h-12 w-full text-base font-semibold transition-all duration-300 ${
                   plan.featured
-                    ? "border-0 bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 hover:brightness-110"
-                    : "border-white/[0.08] bg-white/[0.04] text-blue-200/70 hover:border-white/[0.15] hover:bg-white/[0.08] hover:text-white"
+                    ? "border-0 bg-linear-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 hover:brightness-110"
+                    : "bg-white/8 bg-white/[4] text-blue-200/70 hover:border-white/15 hover:bg-white/[8] hover:text-white"
                 }`}
                 variant={plan.featured ? "default" : "outline"}
               >
@@ -173,7 +173,7 @@ export default function PricingSection() {
               </Button>
 
               {/* Divider */}
-              <Separator className="mb-6 bg-white/[0.06]" />
+              <Separator className="mb-6 bg-white/[6]" />
 
               {/* Features list */}
               <ul className="flex flex-col gap-3.5">
@@ -186,7 +186,7 @@ export default function PricingSection() {
                       className={`mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full ${
                         plan.featured
                           ? "bg-blue-500/20 text-blue-400"
-                          : "bg-white/[0.06] text-blue-200/40"
+                          : "bg-white/[6] text-blue-200/40"
                       }`}
                     >
                       <Check size={12} />
