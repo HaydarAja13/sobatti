@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   description: "Empowering creators, developers, and communities with next-generation blockchain infrastructure.",
 };
 
+import { CursorBlobProvider } from "@/context/CursorBlobContext";
+import CursorBlob from "@/components/CursorBlob";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -30,7 +33,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <CursorBlobProvider>
+          <CursorBlob />
+          {children}
+        </CursorBlobProvider>
       </body>
     </html>
   );

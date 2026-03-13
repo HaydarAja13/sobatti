@@ -49,8 +49,8 @@ export default function FaqSection() {
       className="relative overflow-hidden bg-[#020205] px-6 py-28 sm:py-36"
     >
       {/* Section transition gradients */}
-      <div className="pointer-events-none absolute top-0 right-0 left-0 h-40 bg-gradient-to-b from-[#050816] to-transparent" />
-      <div className="pointer-events-none absolute right-0 bottom-0 left-0 h-40 bg-gradient-to-t from-[#050816] to-transparent" />
+      <div className="pointer-events-none absolute top-0 right-0 left-0 h-40 bg-linear-to-b from-[#050816] to-transparent" />
+      <div className="pointer-events-none absolute right-0 bottom-0 left-0 h-40 bg-linear-to-t from-[#050816] to-transparent" />
 
       {/* Dot pattern background */}
       <div
@@ -61,23 +61,11 @@ export default function FaqSection() {
         }}
       />
 
-      {/* Subtle diagonal line pattern */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[2]"
-        style={{
-          backgroundImage: `repeating-linear-gradient(
-            -45deg,
-            transparent,
-            transparent 20px,
-            rgba(255,255,255,0.1) 20px,
-            rgba(255,255,255,0.1) 21px
-          )`,
-        }}
-      />
+      
 
       {/* Accent glow */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-600/4 blur-[160px]" />
+        <div className="absolute left-1/2 top-1/2 h-150 w-150 -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-600/4 blur-[160px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-3xl">
@@ -92,7 +80,7 @@ export default function FaqSection() {
           >
             <Badge
               variant="outline"
-              className="gap-2 border-indigo-500/20 bg-indigo-500/10 px-4 py-1.5 text-sm font-medium text-indigo-300 backdrop-blur-sm hover:bg-indigo-500/15"
+              className="gap-2 border-indigo-500/20 bg-indigo-500/10 px-4 py-4 text-base font-medium text-indigo-300 backdrop-blur-sm hover:bg-indigo-500/15"
             >
               FAQ
             </Badge>
@@ -135,12 +123,12 @@ export default function FaqSection() {
               <AccordionItem
                 key={i}
                 value={`item-${i}`}
-                className="rounded-xl border border-white/6 bg-white/[2] px-6 backdrop-blur-sm transition-colors duration-200 data-[state=open]:border-indigo-500/15 data-[state=open]:bg-indigo-500/[3]"
+                className="rounded-xl border border-white/6 bg-white/200 px-6 backdrop-blur-sm transition-colors duration-200 data-[state=open]:border-indigo-500/15 data-[state=open]:bg-indigo-500/300"
               >
-                <AccordionTrigger className="py-5 text-left text-base font-semibold text-white hover:no-underline [&[data-state=open]>svg]:text-indigo-400">
+                <AccordionTrigger className="py-5 text-left text-lg font-semibold text-white hover:no-underline [&[data-state=open]>svg]:text-indigo-400">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="pb-5 text-sm leading-relaxed text-zinc-400">
+                <AccordionContent className="pb-5 text-base leading-relaxed text-zinc-400">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

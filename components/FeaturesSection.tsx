@@ -181,7 +181,7 @@ export default function FeaturesSection() {
           <div className="mb-12 text-center">
             <Badge
               variant="outline"
-              className="mb-6 gap-2 border-blue-500/20 bg-blue-500/10 px-4 py-1.5 text-sm font-medium text-blue-300 backdrop-blur-sm hover:bg-blue-500/15"
+              className="mb-6 gap-2 border-blue-500/20 bg-blue-500/10 px-4 py-4 text-base font-medium text-blue-300 backdrop-blur-sm hover:bg-blue-500/15"
             >
               Our Courses
             </Badge>
@@ -216,7 +216,7 @@ export default function FeaturesSection() {
                 <h3 className="mb-3 text-xl font-bold text-white">
                   {course.title}
                 </h3>
-                <p className="mb-5 text-sm leading-relaxed text-blue-200/40">
+                <p className="mb-5 text-base leading-relaxed text-blue-200/40">
                   {course.description}
                 </p>
 

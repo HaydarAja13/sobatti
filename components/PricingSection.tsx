@@ -60,14 +60,14 @@ export default function PricingSection() {
       id="pricing"
       className="relative overflow-hidden bg-[#060a1e] px-6 py-28 sm:py-36"
     >
-      {/* Section transition gradients */}
-      <div className="pointer-events-none absolute top-0 right-0 left-0 h-40 bg-gradient-to-b from-[#050816] to-transparent" />
-      <div className="pointer-events-none absolute right-0 bottom-0 left-0 h-40 bg-gradient-to-t from-[#050816] to-transparent" />
+      {/* Section transition linears */}
+      <div className="pointer-events-none absolute top-0 right-0 left-0 h-40 bg-linear-to-b from-[#050816] to-transparent" />
+      <div className="pointer-events-none absolute right-0 bottom-0 left-0 h-40 bg-linear-to-t from-[#050816] to-transparent" />
 
       {/* Background glows */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-0 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/4 rounded-full bg-blue-600/6 blur-[140px]" />
-        <div className="absolute right-0 bottom-1/4 h-[500px] w-[500px] translate-x-1/4 rounded-full bg-indigo-600/5 blur-[120px]" />
+        <div className="absolute left-1/2 top-0 h-175 w-175 -translate-x-1/2 -translate-y-1/4 rounded-full bg-blue-600/6 blur-[140px]" />
+        <div className="absolute right-0 bottom-1/4 h-125 w-125 translate-x-1/4 rounded-full bg-indigo-600/5 blur-[120px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl">
@@ -82,7 +82,7 @@ export default function PricingSection() {
           >
             <Badge
               variant="outline"
-              className="gap-2 border-blue-500/20 bg-blue-500/10 px-4 py-1.5 text-sm font-medium text-blue-300 backdrop-blur-sm hover:bg-blue-500/15"
+              className="gap-2 border-blue-500/20 bg-blue-500/10 px-4 py-4 text-base font-medium text-blue-300 backdrop-blur-sm hover:bg-blue-500/15"
             >
               Pricing
             </Badge>
@@ -95,9 +95,9 @@ export default function PricingSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-5 text-4xl font-extrabold tracking-tight text-white sm:text-5xl"
           >
-            Simple,{" "}
+            Affordable,{" "}
             <span className="bg-linear-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-              Transparent
+              Student
             </span>{" "}
             Pricing
           </motion.h2>
@@ -114,10 +114,10 @@ export default function PricingSection() {
           </motion.p>
         </div>
 
-        <Separator className="mx-auto my-16 max-w-xs bg-white/[6]" />
+        <Separator className="mx-auto my-16 max-w-xs bg-white/600" />
 
         {/* Pricing cards */}
-        <div className="grid gap-5 lg:grid-cols-3">
+        <div className="grid gap-6 lg:grid-cols-3">
           {plans.map((plan, i) => (
             <motion.div
               key={plan.name}
@@ -127,16 +127,16 @@ export default function PricingSection() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className={`group relative flex flex-col rounded-2xl border p-8 backdrop-blur-sm transition-all duration-300 ${
                 plan.featured
-                  ? "border-blue-500/25 bg-blue-500/[6] shadow-xl shadow-blue-600/10 lg:scale-105"
-                  : "border-white/6 bg-white/[2] hover:border-blue-500/15 hover:bg-blue-500/[3]"
+                  ? "border-blue-500/25 bg-blue-500/600 shadow-xl shadow-blue-600/10 lg:scale-105"
+                  : "border-white/6 bg-white/200 hover:border-blue-500/15 hover:bg-blue-500/300"
               }`}
             >
               {/* Popular badge */}
               {plan.featured && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <Badge className="gap-1.5 border-0 bg-linear-to-r from-blue-600 to-indigo-600 px-4 py-1 text-xs font-semibold text-white shadow-lg shadow-blue-600/25">
-                    <Sparkles size={12} />
-                    Most Popular
+                  <Badge className="gap-1.5 border-0 bg-linear-to-r from-blue-600 to-indigo-600 px-4 py-4 text-sm font-semibold text-white shadow-lg shadow-blue-600/25">
+                    <Sparkles size={16} />
+                    Best Value
                   </Badge>
                 </div>
               )}
@@ -144,7 +144,7 @@ export default function PricingSection() {
               {/* Plan name & description */}
               <div className="mb-6">
                 <h3 className="text-xl font-bold text-white">{plan.name}</h3>
-                <p className="mt-1.5 text-sm text-blue-200/40">
+                <p className="mt-1.5 text-base text-blue-200/40">
                   {plan.description}
                 </p>
               </div>
@@ -165,7 +165,7 @@ export default function PricingSection() {
                 className={`mb-8 h-12 w-full text-base font-semibold transition-all duration-300 ${
                   plan.featured
                     ? "border-0 bg-linear-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 hover:brightness-110"
-                    : "bg-white/8 bg-white/[4] text-blue-200/70 hover:border-white/15 hover:bg-white/[8] hover:text-white"
+                    : "bg-white/8 text-blue-200/70 hover:border-white/15 hover:bg-white/800 hover:text-white"
                 }`}
                 variant={plan.featured ? "default" : "outline"}
               >
@@ -173,20 +173,20 @@ export default function PricingSection() {
               </Button>
 
               {/* Divider */}
-              <Separator className="mb-6 bg-white/[6]" />
+              <Separator className="mb-6 bg-white/600" />
 
               {/* Features list */}
               <ul className="flex flex-col gap-3.5">
                 {plan.features.map((feature) => (
                   <li
                     key={feature}
-                    className="flex items-start gap-3 text-sm text-blue-200/50"
+                    className="flex items-start gap-3 text-base text-blue-200/50"
                   >
                     <div
-                      className={`mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full ${
+                      className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${
                         plan.featured
                           ? "bg-blue-500/20 text-blue-400"
-                          : "bg-white/[6] text-blue-200/40"
+                          : "bg-white/6 text-blue-200/40"
                       }`}
                     >
                       <Check size={12} />

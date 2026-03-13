@@ -1,52 +1,14 @@
 "use client";
 
 import { motion } from "motion/react";
-import {
-  Rocket,
-  Github,
-  Twitter,
-  Linkedin,
-  Youtube,
-  ArrowRight,
-} from "lucide-react";
+import { Rocket, Phone, Instagram, Facebook, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
-const footerLinks = {
-  Product: [
-    { name: "Features", href: "#features" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Integrations", href: "#" },
-    { name: "Changelog", href: "#" },
-    { name: "Documentation", href: "#" },
-  ],
-  Company: [
-    { name: "About", href: "#about" },
-    { name: "Team", href: "#teams" },
-    { name: "Careers", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Press Kit", href: "#" },
-  ],
-  Resources: [
-    { name: "FAQ", href: "#faq" },
-    { name: "Community", href: "#" },
-    { name: "Tutorials", href: "#" },
-    { name: "API Reference", href: "#" },
-    { name: "Status Page", href: "#" },
-  ],
-  Legal: [
-    { name: "Privacy Policy", href: "#" },
-    { name: "Terms of Service", href: "#" },
-    { name: "Cookie Policy", href: "#" },
-    { name: "GDPR", href: "#" },
-  ],
-};
-
 const socials = [
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Youtube, href: "#", label: "YouTube" },
+  { icon: Phone, href: "#", label: "Phone" },
+  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Facebook, href: "#", label: "Facebook" },
 ];
 
 export default function Footer() {
@@ -57,7 +19,7 @@ export default function Footer() {
 
       {/* Ambient glow */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-0 h-[400px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-600/4 blur-[120px]" />
+        <div className="absolute left-1/2 top-0 h-100 w-200 -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-600/4 blur-[120px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl">
@@ -72,16 +34,17 @@ export default function Footer() {
             className="max-w-sm"
           >
             <a href="#home" className="mb-4 flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 shadow-lg shadow-blue-500/20">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-linear-to-br from-blue-500 to-indigo-600 shadow-lg shadow-blue-500/20">
                 <Rocket size={16} className="text-white" />
               </div>
               <span className="text-lg font-bold tracking-tight text-white">
-                Sobatti
+                SOBAT.TI
               </span>
             </a>
             <p className="mt-4 text-sm leading-relaxed text-zinc-500">
-              Empowering the next generation of creators and developers with
-              cutting-edge blockchain infrastructure and education.
+              Helping skill development in Information Technology. We provide
+              specialized service and mentorship for students and university
+              students
             </p>
 
             {/* Social icons */}
@@ -91,9 +54,9 @@ export default function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/6 bg-white/[2] text-zinc-500 transition-all duration-200 hover:border-indigo-500/20 hover:bg-indigo-500/10 hover:text-white"
+                  className="flex size-10 items-center justify-center rounded-lg border border-white/6 bg-white/200 text-zinc-500 transition-all duration-200 hover:border-indigo-500/20 hover:bg-indigo-500/10 hover:text-white"
                 >
-                  <social.icon size={15} />
+                  <social.icon size={18} />
                 </a>
               ))}
             </div>
@@ -107,22 +70,22 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="max-w-md"
           >
-            <h3 className="mb-2 text-sm font-semibold text-white">
-              Stay in the loop
+            <h3 className="mb-2 text-base font-semibold text-white">
+              Stay with us
             </h3>
             <p className="mb-4 text-sm text-zinc-500">
-              Get the latest updates, news and product announcements delivered
+              Get the latest discounts, news and product announcements delivered
               straight to your inbox.
             </p>
             <form onSubmit={(e) => e.preventDefault()} className="flex gap-2">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="h-10 w-full rounded-lg border border-white/6 bg-white/[3] px-4 text-sm text-white placeholder-zinc-600 outline-none transition-colors focus:border-indigo-500/30"
+                className="h-10 w-full rounded-lg border border-white/6 bg-white/200 px-4 text-base text-white placeholder-zinc-600 outline-none transition-colors focus:border-indigo-500/30"
               />
               <Button
                 type="submit"
-                className="h-10 flex-shrink-0 border-0 bg-linear-to-r from-indigo-600 to-violet-600 px-4 font-semibold text-white shadow-md shadow-indigo-600/20 hover:brightness-110"
+                className="h-10 shrink-0 border-0 bg-linear-to-r from-indigo-600 to-violet-600 px-4 font-semibold text-white shadow-md shadow-indigo-600/20 hover:brightness-110"
               >
                 <ArrowRight size={16} />
               </Button>
@@ -130,38 +93,9 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        <Separator className="mb-10 bg-white/[4]" />
+        <Separator className="mb-10 bg-white/400" />
 
-        {/* Link columns */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.15 }}
-          className="mb-14 grid grid-cols-2 gap-8 sm:grid-cols-4"
-        >
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h4 className="mb-4 text-xs font-semibold tracking-wider text-zinc-400 uppercase">
-                {category}
-              </h4>
-              <ul className="flex flex-col gap-2.5">
-                {links.map((link) => (
-                  <li key={link.name}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-zinc-600 transition-colors duration-200 hover:text-white"
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </motion.div>
-
-        <Separator className="mb-6 bg-white/[4]" />
+        <Separator className="mb-6 bg-white/400" />
 
         {/* Bottom bar */}
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">

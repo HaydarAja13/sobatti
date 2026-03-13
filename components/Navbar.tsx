@@ -67,7 +67,7 @@ export default function Navbar() {
               className="bg-linear-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 hover:brightness-110 border-0"
             >
               <a href="#contact" className="gap-2">
-                Teach Me!
+                Contact Us
                 <svg
                   width="14"
                   height="14"
